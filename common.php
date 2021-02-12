@@ -2384,10 +2384,10 @@ function render_list($path = '', $files = [])
         }
 
         // 最后清除换行
-        while (strpos($html, "\r\n\r\n")) $html = str_replace("\r\n\r\n", "\r\n", $html);
-        //while (strpos($html, "\r\r")) $html = str_replace("\r\r", "\r", $html);
-        while (strpos($html, "\n\n")) $html = str_replace("\n\n", "\n", $html);
-        //while (strpos($html, PHP_EOL.PHP_EOL)) $html = str_replace(PHP_EOL.PHP_EOL, PHP_EOL, $html);
+        // while (strpos($html, "\r\n\r\n")) $html = str_replace("\r\n\r\n", "\r\n", $html);
+        // while (strpos($html, "\r\r")) $html = str_replace("\r\r", "\r", $html);
+        // while (strpos($html, "\n\n")) $html = str_replace("\n\n", "\n", $html);
+        // while (strpos($html, PHP_EOL.PHP_EOL)) $html = str_replace(PHP_EOL.PHP_EOL, PHP_EOL, $html);
 
         $exetime = round(microtime(true)-$_SERVER['php_starttime'],3);
         //$ip2city = json_decode(curl('GET', 'http://ip.taobao.com/outGetIpInfo?ip=' . $_SERVER['REMOTE_ADDR'] . '&accessKey=alibaba-inc')['body'], true);
