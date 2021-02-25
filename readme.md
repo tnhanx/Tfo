@@ -1,7 +1,7 @@
 # **Tfo**
-###### A website for two-point filestorage online (tfo)(20210201). 
+###### A website for two-point filestorage online (tfo)(20210223). 
 
-<img src="https://tfo.herokuapp.com/index/Uploaded/WebContents/Github/Tfo/Tfo.logo.svg" alt="Tfo's Logo" width="250" height="250"/>
+<img src="https://tfo.herokuapp.com/index/Upload%20上传/WebContents/Github/Tfo/Tfo.logo.svg" alt="Tfo's Logo" width="250" height="250"/>
 
 ## Featured theme files 主题特征性文件
 <table> 
@@ -12,20 +12,25 @@
             <th>Postscript</th> 
         </tr> 
         <tr> 
-            <td rowspan="3">Information</td> 
+            <td rowspan="4">Information</td> 
             <td>
                 <a href="./app.json" title="app.json">app.json</a>
             </td>
-            <td rowspan="3">Tfo's information is described in these files for deployment</td> 
+            <td rowspan="4">Tfo's information is described in these files for deployment</td> 
         </tr>
         <tr>
             <td>
                 <a href="./readme.md" title="readme.md">readme.md</a>
             </td>
         </tr>
-                <tr>
+        <tr>
             <td>
                 <a href="./common.php" title="common.php">common.php</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="./conststr.php" title="conststr.php">conststr.php</a>
             </td>
         </tr>
         <tr> 
@@ -80,7 +85,16 @@
     </tbody>
 </table>
 
-具体地，您可以下载/复制体验一下或参考示例中运用tfo.html的[Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini")。今日诗词随多盘显示。目前，主题仍存在诸多问题，请谅解。PS:主题将要实现的功能有狠多，敬请期待...但是自愿附加组件如今日诗词、评论系统、站长工具、访问统计等涉及到其他平台的私密内容不包含在主题内，若有需要请自行寻找在后台添加。主题的php历史版本请到<a href="./theme/" title="Old Theme">Theme</a>文件夹查看.
+
+Theme features:
+1.Poetry displayed with more-disk.
+
+> 主题特性：
+今日诗词随多盘显示.
+
+Specifically, you can download or fork the repository, experience it on [Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini") with the example tfo.html. The theme is based on classic.html with modification, all original features are supported. At present, there are still many problems with the theme, please understand. PS: the theme will realize many functions, you could keep looking forward to next updates. However, the private content related to other platforms, such as comments system, webmaster tools, access statistics, which are not included in the theme. If you need, please find and add them in the setup page. The PHP historical version of the theme can be found in the <a href="./theme/" title="Old Theme">Theme</a> folder.
+
+> 具体地，您可以下载/复制体验一下或参考示例中运用tfo.html的[Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini")。主题基于classic.html修改所得，支持所有原始特性。目前，主题仍存在诸多问题，请谅解。PS:主题将要实现的功能有狠多，敬请期待...但是自愿附加组件如评论系统、站长工具、访问统计等涉及到其他平台的私密内容不包含在主题内，若有需要请自行寻找在后台添加。主题的php历史版本请到<a href="./theme/" title="Old Theme">Theme</a>文件夹查看.
 
 ## Deploy 部署
 ### Deploy to Heroku  
