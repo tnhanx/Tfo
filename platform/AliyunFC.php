@@ -43,12 +43,12 @@ function GetPathSetting($event, $context)
     if ($path=='/'||$path=='') {
         $_SERVER['base_path'] = $tmp;
     } else {
-        $_SERVER['base_path'] = substr($tmp, 0, -strlen($path)+1);
+        $_SERVER['base_path'] = substr($tmp, 0, strlen($tmp)-strlen($path)+1);
     }
 
     if (substr($path,-1)=='/') $path=substr($path,0,-1);
     $_SERVER['is_guestup_path'] = is_guestup_path($path);
-    $_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
+    //$_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
     $_SERVER['REMOTE_ADDR'] = $event['clientIP'];
     $_SERVER['HTTP_X_REQUESTED_WITH'] = $event['headers']['X-Requested-With'][0];
     if (isset($event['headers']['Authorization'])) {
@@ -59,7 +59,6 @@ function GetPathSetting($event, $context)
     $_SERVER['HTTP_HOST'] = $event['headers']['Host'][0];
     $_SERVER['REQUEST_SCHEME'] = $event['headers']['X-Forwarded-Proto'][0];
     $_SERVER['host'] = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
-    //if ($_SERVER['HTTP_REFERER']!='') 
     $_SERVER['referhost'] = explode('/', $event['headers']['Referer'][0])[2];
     $_SERVER['FC_SERVER_PATH'] = '/var/fc/runtime/php7.2';
     return $path;
@@ -90,7 +89,10 @@ function setConfig($arr, $disktag = '')
     $indisk = 0;
     $operatedisk = 0;
     foreach ($arr as $k => $v) {
-        if (isInnerEnv($k)) {
+        if (isCommonEnv($k)) {
+            if (isBase64Env($k)) $tmp[$k] = base64y_encode($v);
+            else $tmp[$k] = $v;
+        } elseif (isInnerEnv($k)) {
             if (isBase64Env($k)) $diskconfig[$k] = base64y_encode($v);
             else $diskconfig[$k] = $v;
             $indisk = 1;
@@ -109,8 +111,7 @@ function setConfig($arr, $disktag = '')
         } elseif ($k=='disktag_rename' || $k=='disktag_newname') {
             if ($arr['disktag_rename']!=$arr['disktag_newname']) $operatedisk = 1;
         } else {
-            if (isBase64Env($k)) $tmp[$k] = base64y_encode($v);
-            else $tmp[$k] = $v;
+            $tmp[$k] = json_encode($v);
         }
     }
     if ($indisk) {

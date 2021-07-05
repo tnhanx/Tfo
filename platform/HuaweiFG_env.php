@@ -58,7 +58,7 @@ function GetPathSetting($event, $context)
     }
     if (substr($path,-1)=='/') $path=substr($path,0,-1);
     $_SERVER['is_guestup_path'] = is_guestup_path($path);
-    $_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
+    //$_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
     $_SERVER['REMOTE_ADDR'] = $event['headers']['x-real-ip'];
     $_SERVER['HTTP_X_REQUESTED_WITH'] = $event['headers']['x-requested-with'];
     $_SERVER['HTTP_USER_AGENT'] = $event['headers']['user-agent'];
@@ -69,7 +69,6 @@ function GetPathSetting($event, $context)
     }
     $_SERVER['REQUEST_SCHEME'] = $event['headers']['x-forwarded-proto'];
     $_SERVER['host'] = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
-    //if ($_SERVER['HTTP_REFERER']!='') 
     $_SERVER['referhost'] = explode('/', $event['headers']['referer'])[2];
     $_SERVER['HTTP_TRANSLATE'] = $event['headers']['translate'];//'f'
     $_SERVER['_APP_SHARE_DIR'] = '/var/share/CFF/processrouter';
@@ -103,7 +102,10 @@ function setConfig($arr, $disktag = '')
     $indisk = 0;
     $operatedisk = 0;
     foreach ($arr as $k => $v) {
-        if (isInnerEnv($k)) {
+        if (isCommonEnv($k)) {
+            if (isBase64Env($k)) $tmp[$k] = base64y_encode($v);
+            else $tmp[$k] = $v;
+        } elseif (isInnerEnv($k)) {
             if (isBase64Env($k)) $diskconfig[$k] = base64y_encode($v);
             else $diskconfig[$k] = $v;
             $indisk = 1;
@@ -122,8 +124,7 @@ function setConfig($arr, $disktag = '')
         } elseif ($k=='disktag_rename' || $k=='disktag_newname') {
             if ($arr['disktag_rename']!=$arr['disktag_newname']) $operatedisk = 1;
         } else {
-            if (isBase64Env($k)) $tmp[$k] = base64y_encode($v);
-            else $tmp[$k] = $v;
+            $tmp[$k] = json_encode($v);
         }
     }
     if ($indisk) {

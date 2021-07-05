@@ -1,5 +1,5 @@
 # **Tfo**
-###### A website for two-point filestorage online (tfo)(20210223). 
+###### A website for two-point filestorage online (tfo)(20210701). 
 
 <img src="https://tfo.herokuapp.com/index/Upload%20上传/WebContents/Github/Tfo/Tfo.logo.svg" alt="Tfo's Logo" width="250" height="250"/>
 
@@ -52,17 +52,7 @@
         </tr>
         <tr>
             <td>
-                <a href="./platform/Normal.php" title="Normal.php">Normal.php</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="./platform/TencentSCF_file.php" title="TencentSCF_file.php">TencentSCF_file.php</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="./platform/TencentSCF_env.php" title="TencentSCF_env.php">TencentSCF_env.php</a>
+                <a href="./platform/HuaweiFG_env.php" title="HuaweiFG_env.php">HuaweiFG_env.php</a>
             </td>
         </tr>
         <tr>
@@ -72,7 +62,17 @@
         </tr>
         <tr>
             <td>
-                <a href="./platform/HuaweiFG_env.php" title="HuaweiFG_env.php">HuaweiFG_env.php</a>
+                <a href="./platform/Normal.php" title="Normal.php">Normal.php</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="./platform/TencentSCF_env.php" title="TencentSCF_env.php">TencentSCF_env.php</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="./platform/TencentSCF_file.php" title="TencentSCF_file.php">TencentSCF_file.php</a>
             </td>
         </tr>
         <tr> 
@@ -87,21 +87,30 @@
 
 
 Theme features:
-1.Poetry displayed with more-disk.
+1. Poetry displayed with more-disk. 2. Move the setting/login button to bottom left.
 
-> 主题特性：
-今日诗词随多盘显示.
+> 主题特性：1. 今日诗词随多盘显示. 2. 将设置/登录按钮移到底部动态图标处悬浮.
 
 Specifically, you can download or fork the repository, experience it on [Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini") with the example tfo.html. The theme is based on classic.html with modification, all original features are supported. At present, there are still many problems with the theme, please understand. PS: the theme will realize many functions, you could keep looking forward to next updates. However, the private content related to other platforms, such as comments system, webmaster tools, access statistics, which are not included in the theme. If you need, please find and add them in the setup page. The PHP historical version of the theme can be found in the <a href="./theme/" title="Old Theme">Theme</a> folder.
 
 > 具体地，您可以下载/复制体验一下或参考示例中运用tfo.html的[Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini")。主题基于classic.html修改所得，支持所有原始特性。目前，主题仍存在诸多问题，请谅解。PS:主题将要实现的功能有狠多，敬请期待...但是自愿附加组件如评论系统、站长工具、访问统计等涉及到其他平台的私密内容不包含在主题内，若有需要请自行寻找在后台添加。主题的php历史版本请到<a href="./theme/" title="Old Theme">Theme</a>文件夹查看.
 
 ## Deploy 部署
+Install program first, then add onedrive in setup after login.  
+先安装程序，登录后在设置中添加onedrive。
+
+NOTICE: the release is used as archive. 
+注意：release只是用来存档的。
+
+Please read the descriptions of settings before raising an issue. 请将设置中所有的设置项的说明都读一遍，有些问题就不用问了。  
+
 ### Deploy to Heroku  
 Official: https://heroku.com  
 Demo: https://herooneindex.herokuapp.com/  
 
-How to Install: Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BingoKingo/Tfo) to Deploy a new app, or create an app then deploy via connect to your github fork.  
+How to Install:   
+> ~~Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BingoKingo/Tfo) to Deploy a new app~~(`"We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy."`)  
+> Create an app, then turn to Deploy tab, deploy via connect to your github fork.   
 
 
 ### Deploy to Glitch  
@@ -127,25 +136,10 @@ How to Install:
 添加网盘时，SCF可能会反应不过来，不跳转到微软，导致添加失败，请不要删除这个盘，再添加一次相同标签的盘就可以了。  
 
 
-### Deploy to Virtual Private Server (VPS 或空间)  
-DEMO:  无  
-How to Install:  
-    1.Start web service on your server (httpd or other), make sure you can visit it.  
-    启动web服务器，确保你能访问到。  
-    2.Make the rewrite works, the rule is in .htaccess file, make sure any query redirect to index.php.  
-    开启伪静态(重写)功能，规则在.htaccess文件中，ngnix从里面复制，我们的目的是不管访问什么都让index.php来处理。  
-    3.Upload code.  
-    上传好代码。  
-    4.Change the file .data/config.php can be read&write (666 is suggested).  
-    使web身份可读写代码中的.data/config.php文件，推荐chmod 666 .data/config.php。    
-    5.View the website in chrome or other.  
-    在浏览器中访问。  
-
-
 ### Deploy to Huawei cloud Function Graph (FG 华为云函数工作流)  
 Official: https://console.huaweicloud.com/functiongraph/  
 DEMO:  无  
-注意：FG中，环境变量整体大小为2KB，所以最多添加2个盘。  
+注意：FG中，环境变量整体大小为2KB，所以最多添加2个盘（一个onedrive一个aliyundrive）。  
 
 How to Install:  
 1，在函数列表，点右边创建函数  
@@ -180,6 +174,21 @@ How to Install:
 4，触发器：下拉选择HTTP触发器，URL路径填 /{filepath+} ，HTTP方法全选，身份验证：不验证，点提交  
 5，进入代码编辑页，编辑类型改上传函数ZIP包，选择文件（这里的ZIP文件不能直接用从Github上下载的ZIP文件，要将它解压后，去掉外层文件夹后，再压缩为ZIP。），开始上传  
 6，点击右边触发器，复制并访问提供的url，开始安装  
+
+
+### Deploy to Virtual Private Server (VPS 或空间)  
+DEMO:  无  
+How to Install:  
+    1.Start web service on your server (httpd or other), make sure you can visit it.  
+    启动web服务器，确保你能访问到。  
+    2.Make the rewrite works, the rule is in .htaccess file, make sure any query redirect to index.php.  
+    开启伪静态(重写)功能，规则在.htaccess文件中，ngnix从里面复制，我们的目的是不管访问什么都让index.php来处理。  
+    3.Upload code.  
+    上传好代码。  
+    4.Change the file .data/config.php can be read&write (666 is suggested).  
+    使web身份可读写代码中的.data/config.php文件，推荐chmod 666 .data/config.php。    
+    5.View the website in chrome or other.  
+    在浏览器中访问。  
 
 
 ## Features 特性  

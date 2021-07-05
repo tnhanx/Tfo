@@ -30,7 +30,7 @@ function GetPathSetting($event, $context)
     $_SERVER['firstacceptlanguage'] = strtolower(splitfirst(splitfirst($event['headers']['accept-language'],';')[0],',')[0]);
     $_SERVER['function_name'] = $context['function_name'];
     $_SERVER['namespace'] = $context['namespace'];
-    $_SERVER['Region'] = getenv('TENCENTCLOUD_REGION');
+    $_SERVER['Region'] = $context['tencentcloud_region'];
     $host_name = $event['headers']['host'];
     $_SERVER['HTTP_HOST'] = $host_name;
     $serviceId = $event['requestContext']['serviceId'];
@@ -43,7 +43,7 @@ function GetPathSetting($event, $context)
     }
     if (substr($path,-1)=='/') $path=substr($path,0,-1);
     $_SERVER['is_guestup_path'] = is_guestup_path($path);
-    $_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
+    //$_SERVER['PHP_SELF'] = path_format($_SERVER['base_path'] . $path);
     $_SERVER['REMOTE_ADDR'] = $event['requestContext']['sourceIp'];
     $_SERVER['HTTP_X_REQUESTED_WITH'] = $event['headers']['x-requested-with'];
     $_SERVER['HTTP_USER_AGENT'] = $event['headers']['user-agent'];
@@ -52,7 +52,8 @@ function GetPathSetting($event, $context)
         $_SERVER['PHP_AUTH_USER'] = $basicAuth[0];
         $_SERVER['PHP_AUTH_PW'] = $basicAuth[1];
     }
-    $_SERVER['REQUEST_SCHEME'] = $event['headers']['x-forwarded-proto'];
+    $_SERVER['REQUEST_SCHEME'] = $event['headers']['x-api-scheme'];
+    //$_SERVER['REQUEST_SCHEME'] = $event['headers']['x-forwarded-proto'];
     $_SERVER['host'] = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
     $_SERVER['referhost'] = explode('/', $event['headers']['referer'])[2];
     $_SERVER['HTTP_TRANSLATE']==$event['headers']['translate'];//'f'
@@ -71,12 +72,12 @@ function getConfig($str, $disktag = '')
         if (isInnerEnv($str)) {
             if ($disktag=='') $disktag = $_SERVER['disktag'];
             if (isset($envs[$disktag][$str])) {
-                if (in_array($str, $Base64Env)) return base64y_decode($envs[$disktag][$str]);
+                if (isBase64Env($str)) return base64y_decode($envs[$disktag][$str]);
                 else return $envs[$disktag][$str];
             }
         } else {
             if (isset($envs[$str])) {
-                if (in_array($str, $Base64Env)) return base64y_decode($envs[$str]);
+                if (isBase64Env($str)) return base64y_decode($envs[$str]);
                 else return $envs[$str];
             }
         }
@@ -96,8 +97,11 @@ function setConfig($arr, $disktag = '')
     $indisk = 0;
     $operatedisk = 0;
     foreach ($arr as $k => $v) {
-        if (isInnerEnv($k)) {
-            if (in_array($k, $Base64Env)) $envs[$disktag][$k] = base64y_encode($v);
+        if (isCommonEnv($k)) {
+            if (isBase64Env($k)) $envs[$k] = base64y_encode($v);
+            else $envs[$k] = $v;
+        } elseif (isInnerEnv($k)) {
+            if (isBase64Env($k)) $envs[$disktag][$k] = base64y_encode($v);
             else $envs[$disktag][$k] = $v;
             $indisk = 1;
         } elseif ($k=='disktag_add') {
@@ -115,8 +119,7 @@ function setConfig($arr, $disktag = '')
         } elseif ($k=='disktag_rename' || $k=='disktag_newname') {
             if ($arr['disktag_rename']!=$arr['disktag_newname']) $operatedisk = 1;
         } else {
-            if (in_array($k, $Base64Env)) $envs[$k] = base64y_encode($v);
-            else $envs[$k] = $v;
+            $envs[$k] = $v;
         }
     }
     if ($indisk) {

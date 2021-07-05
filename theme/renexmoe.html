@@ -4,7 +4,6 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link rel="preconnect" href="https://renexmoe.vercel.app" />
 <meta charset="utf-8" />
 <link
   rel="shortcut icon"
@@ -17,7 +16,7 @@
 />
 <title><!--Title--></title>
 <meta name="description" content="A Onemanager-PHP site with Theme-renexmoe" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/css/app.css"><meta name="theme-color" content="#fff" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/css/app.css"><meta name="theme-color" content="#fff" />
 <!--BackgroundStart-->
 <style>
   body {
@@ -54,6 +53,7 @@
   window.disableddarkmode = true;
 </script>
 <!--BackgroundMEnd-->
+
   </head>
   <body
     class="mdui-appbar-with-toolbar mdui-theme-layout-auto mdui-loaded mdui-theme-accent-pink"
@@ -200,24 +200,33 @@
   <!--AdminEnd-->
 </ul>
 <i id="mouseplace" style="position: absolute"></i>
-<form action="?admin" method="post">
-  <div class="mdui-dialog" id="login_input">
-    <div class="mdui-dialog-title">登录</div>
-    <div class="mdui-dialog-content" style="height: 108px">
-      <div class="mdui-textfield mdui-textfield-floating-label">
-        <i class="mdui-icon material-icons">lock</i
-        ><label class="mdui-textfield-label">密码</label
-        ><input class="mdui-textfield-input" name="password1" type="password" />
-      </div>
-    </div>
-    <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple" mdui-dialog-close="">取消</button
-      ><button class="mdui-btn mdui-ripple" type="submit" value="登录">
-        登录
-      </button>
+
+<div class="mdui-dialog" id="login_input">
+  <div class="mdui-dialog-title">登录</div>
+  <div class="mdui-dialog-content" style="height: 108px">
+    <div class="mdui-textfield mdui-textfield-floating-label">
+      <i class="mdui-icon material-icons">lock</i
+      ><label class="mdui-textfield-label">密码</label
+      ><input
+        class="mdui-textfield-input"
+        name="password1"
+        type="password"
+        onkeydown="if(event.keyCode==13) document.querySelector('#login_btn').click();"
+      />
     </div>
   </div>
-</form>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple" mdui-dialog-close="" id="login_close">取消</button
+    ><button
+      id="login_btn"
+      class="mdui-btn mdui-ripple"
+      type="submit"
+      value="登录"
+    >
+      登录
+    </button>
+  </div>
+</div>
  <!--EncryptedStart-->
 <div class="mdui-col-md-6 mdui-col-offset-md-3">
   <br />
@@ -257,18 +266,15 @@
 </div>
 <div
   class="mdui-typo mdui-shadow-3 markdown"
-  style="padding: 20px; margin: 20px 0"
+  style="padding: 20px; margin: 20px 0; overflow-x: scroll"
   id="head"
 >
-<pre><code id="head-md"><!--HeadmdContent--></code></pre>
+  <pre><code id="head-md"><!--HeadmdContent--></code></pre>
 </div>
 <!--HeadmdEnd-->
 
-<div
-  class="mdui-row mdui-shadow-3"
-  style="padding: 5px; margin: 20px 0; border-radius: 8px"
->
-  <ul class="mdui-list">
+<div class="mdui-row mdui-shadow-3" style="margin: 20px 0; border-radius: 8px">
+  <ul class="mdui-list" id="file-list">
     <li class="mdui-list-item mdui-ripple">
       <div class="mdui-row mdui-col-xs-12">
         <div class="mdui-col-xs-12 mdui-col-sm-7">
@@ -387,7 +393,7 @@
 </div>
 <div
   class="mdui-typo mdui-shadow-3 markdown"
-  style="padding: 20px; margin: 20px 0"
+  style="padding: 20px; margin: 20px 0; overflow-x: scroll"
   id="readme"
 >
   <pre><code id="readme-md"><!--ReadmemdContent--></code></pre>
@@ -399,9 +405,33 @@
 </div>
 <!--FootomfEnd-->
 
+<script>
+  document.querySelector("#admin-menu").innerHTML +=
+    '<li class="mdui-menu-item"><a href="javascript:void(0);"class="mdui-ripple getalllink"><i class="mdui-menu-item-icon mdui-icon material-icons">link</i>批量链接</a></li>';
+</script>
+<script>
+  window.MorePage = undefined;
+</script>
+<!--MorePageStart-->
+<script>
+    window.MorePage = [
+    <!--MorePageListNowStart-->
+      <!--PageNum-->,
+    <!--MorePageListNowEnd-->
+    <!--MorePageListStart-->
+        <!--PageNum-->,
+    <!--MorePageListEnd-->
+    ];
+  </script>
+<!--MorePageEnd-->
+
 <!--IsFolderEnd-->
  <!--IsFileStart-->
-<div id="file" class="mdui-shadow-3" style="padding: 5px;margin: 20px 0px;padding: 20px;border-radius: 8px;">
+<div
+  id="file"
+  class="mdui-shadow-3"
+  style="padding: 5px; margin: 20px 0px; padding: 20px; border-radius: 8px"
+>
   <!--IsimgFileStart-->
 <img class="mdui-img-fluid mdui-center mdui-m-t-5" src="<!--FileDownUrl-->" />
 <!--IsimgFileEnd-->
@@ -412,9 +442,7 @@
   controls
   autoplay
   style="width: 100%; margin-top: 10%; margin-bottom: 10%"
->
-  >
-</audio>
+></audio>
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
@@ -440,7 +468,7 @@
 <!--IsofficeFileEnd-->
 
   <!--IspdfFileStart-->
-<embed src="<!--FileEncodeReplaceUrl-->" type="application/pdf">
+<embed src="<!--FileEncodeReplaceUrl-->" type="application/pdf" />
 <!--IspdfFileEnd-->
  <!--IstxtFileStart-->
 <pre
@@ -487,5 +515,5 @@
   { "music":"audiotrack", "video":"ondemand_video", "img":"image",
   "pdf":"picture_as_pdf", "default":"insert_drive_file"}
   <!--IconValuesEnd-->
-  <script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~1b381f3c.5004ff1e7fccf38af990.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~28a13772.d11317064b292bf02fea.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~34e3d95a.1bd1a5e8637cbfb8c667.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~5d2cf59e.f43e55be3ceb6bd06cc7.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~798ab416.8cdd2e29b70683103071.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~7c420fd4.7520935b3261cc2558df.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~df18e074.72b37a5a3dc42ae7080e.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~f0256996.b71376c975fe3aff5b8b.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/app~f1cc13fd.7155493f51961fa66d7e.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.5/js/webpack-runtime.a94291540399944c9e47.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@1b381f3c.a4f2dc4618121eac37e2.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@28a13772.98a11cc0c1cf2495c3d8.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@34e3d95a.2f8dbf552095a86a7f1b.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@798ab416.9ed46bb752b71a3c13a4.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@9c50beac.30955a99f08c9574cd14.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/app@f0256996.956ea71aa357ba3fdc28.js"></script><script src="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.3/js/webpack-runtime.93708ab3e9cb84dcc01a.js"></script>
 </html>

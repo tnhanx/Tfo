@@ -4,8 +4,16 @@ function getpath()
 {
     $_SERVER['firstacceptlanguage'] = strtolower(splitfirst(splitfirst($_SERVER['HTTP_ACCEPT_LANGUAGE'],';')[0],',')[0]);
     if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    if ($_SERVER['REQUEST_SCHEME']!='http'&&$_SERVER['REQUEST_SCHEME']!='https') {
+        if ($_SERVER['HTTP_X_FORWARDED_PROTO']!='') {
+            $tmp = explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO'])[0];
+            if ($tmp=='http'||$tmp=='https') $_SERVER['REQUEST_SCHEME'] = $tmp;
+        }
+        //if ($_SERVER['REQUEST_SCHEME']!='http'&&$_SERVER['REQUEST_SCHEME']!='https') {
+        //    echo $_SERVER['REQUEST_SCHEME'];
+        //}
+    }
     $_SERVER['host'] = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
-    //if ($_SERVER['HTTP_REFERER']!='') 
     $_SERVER['referhost'] = explode('/', $_SERVER['HTTP_REFERER'])[2];
     if (isset($_SERVER['DOCUMENT_ROOT'])&&$_SERVER['DOCUMENT_ROOT']==='/app') $_SERVER['base_path'] = '/';
     else $_SERVER['base_path'] = path_format(substr($_SERVER['SCRIPT_NAME'], 0, -10) . '/');
@@ -97,7 +105,10 @@ function setConfig($arr, $disktag = '')
     $indisk = 0;
     $operatedisk = 0;
     foreach ($arr as $k => $v) {
-        if (isInnerEnv($k)) {
+        if (isCommonEnv($k)) {
+            if (isBase64Env($k)) $envs[$k] = base64y_encode($v);
+            else $envs[$k] = $v;
+        } elseif (isInnerEnv($k)) {
             if (isBase64Env($k)) $envs[$disktag][$k] = base64y_encode($v);
             else $envs[$disktag][$k] = $v;
             $indisk = 1;
@@ -116,8 +127,12 @@ function setConfig($arr, $disktag = '')
         } elseif ($k=='disktag_rename' || $k=='disktag_newname') {
             if ($arr['disktag_rename']!=$arr['disktag_newname']) $operatedisk = 1;
         } else {
-            if (isBase64Env($k)) $envs[$k] = base64y_encode($v);
-            else $envs[$k] = $v;
+            //$tmpdisk = json_decode($v, true);
+            //var_dump($tmpdisk);
+            //error_log(json_encode($tmpdisk));
+            //if ($tmpdisk===null) 
+            $envs[$k] = $v;
+            //else $envs[$k] = $tmpdisk;
         }
     }
     if ($indisk) {
@@ -220,7 +235,7 @@ function install()
             url += location.pathname;
             if (url.substr(-1)!="/") url += "/";
             url += "app.json";
-            //alert(url);
+            url += "?" + Date.now();
             var xhr4 = new XMLHttpRequest();
             xhr4.open("GET", url);
             xhr4.setRequestHeader("x-requested-with","XMLHttpRequest");
@@ -310,8 +325,8 @@ function OnekeyUpate($auth = 'BingoKingo', $project = 'Tfo', $branch = 'master')
     $githubfile = file_get_contents($url);
     if (!$githubfile) return 0;
     file_put_contents($tarfile, $githubfile);
-    if (splitfirst(PHP_VERSION, '.')[0] == '7') {
-        $phar = new PharData($tarfile); // need php7
+    if (splitfirst(PHP_VERSION, '.')[0] > '5') {
+        $phar = new PharData($tarfile); // need php5.3, 7, 8
         $phar->extractTo($projectPath, null, true);//路径 要解压的文件 是否覆盖
     } else {
         ob_start();

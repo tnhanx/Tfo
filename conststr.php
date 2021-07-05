@@ -6,17 +6,17 @@ global $constStr;
 $exts['img'] = ['ico', 'bmp', 'gif', 'jpg', 'jpeg', 'jpe', 'jfif', 'tif', 'tiff', 'png', 'heic', 'webp'];
 $exts['music'] = ['mp3', 'wma', 'flac', 'ape', 'wav', 'ogg', 'm4a'];
 $exts['office'] = ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'];
-$exts['txt'] = ['ags', 'irs', 'gem', 'agm', 'irm', 'bak', 'bat', 'cmd', 'c', 'i', 'cs', 'csx', 'cake', 'cpp', 'cq', 'ocx', 'c++', 'hpp', 'hh', 'hxx', 'h++', 'h', 'ii', 'clj', 'cljs', 'cljc', 'cljx', 'clojure', 'edn', 'coffee', 'cson', 'iced', 'css', 'dts', 'dtsi', 'dtso', 'dift', 'patch', 'rej', 'dockerfile', 'containerfile', 'fs', 'fsi', 'fsx', 'fsscript', 'go', 'dot', 'DOT', 'gv', 'groovy', 'gvy', 'gradle', 'jenkinsfile', 'nf', 'handlebars', 'hbs', 'hjs', 'hlsl', 'hlsli', 'fx', 'bth', 'vsh', 'psh', 'cginc', 'compute', 'html', 'htm', 'shtml', 'jthtml', 'jtht', 'mdoc', 'jsp', 'asp', 'aspx', 'jshtm', 'gitignore_global', 'gitignore', 'npmignore', 'ini', 'java', 'jav', 'js', 'es6', 'mjs', 'cjs', 'pac', 'jsx', 'json', 'bowerrc', 'jscsrc', 'webmanifest', 'js.map', 'css.map', 'ts.map', 'har', 'jslintrc', 'jsonld', 'jsonc', 'eslintrc', 'eslintrc.json', 'jsfmtrc', 'jshintrc', 'swcrc', 'hintrc', 'babelrc', 'code-workspace', 'language-configuration.json', 'less', 'log', '', 'log.?', 'lua', 'mk', 'md', 'mkd', 'mdwn', 'mdown', 'markdown', 'markdn', 'mdtxt', 'mdtext', 'workbook', 'm', 'mm', 'pl', 'pm', 'pod', 't', 'PL', 'psgi', 'p6', 'pl6', 'pm6', 'nqp', 'php', 'php4', 'php5', 'phtml', 'ctp', 'ps1', 'psm1', 'psd1 ', 'pssc', 'psrc', 'properties', 'cfg', 'conf', 'directory', 'gitattributes', 'gitconfig', 'gitmodules', 'editorconfig', 'npmrc', 'pug', 'jade', 'py', 'rpy', 'pyw', 'cpy', 'gyp', 'gypi', 'pyi', 'ipy', 'r', 'rhistory', 'rprofile', 'rt', 'cshtml', 'rb', 'rbx', 'rjs', 'gemspec', 'rake', 'ru', 'erb', 'podspec', 'rbi', 'rs', 'scss', 'code-search', 'shader', 'sh', 'bash', 'bashrc', 'bash_aliases', 'bash_profile', 'bash_login', 'ebuild', 'install', 'profile', 'bash_logout', 'sql', 'dsql', 'swift', 'ts', 'tsx', 'bas', 'cls', 'frm', 'sht', 'wbk', 'vbs', 'vba', 'bas', 'vbe', 'wsf', 'wsc', 'acm', 'acr', 'acf', 'vb', 'brs', 'vbs', 'bas', 'xml', 'xsd', 'ascx', 'atom', 'axml', 'bpmn', 'cpt', 'csl', 'csproj', 'csproj.user', 'xsl', 'xslt', 'yml', 'eyaml', 'eyml', 'yaml', 'txt', 'err', 'omf'];
+$exts['txt'] = ['ags', 'irs', 'gem', 'agm', 'irm', 'bak', 'bat', 'cmd', 'c', 'i', 'cs', 'csx', 'cake', 'cpp', 'cq', 'ocx', 'c++', 'hpp', 'hh', 'hxx', 'h++', 'h', 'ii', 'clj', 'cljs', 'cljc', 'cljx', 'clojure', 'edn', 'coffee', 'cson', 'iced', 'css', 'dts', 'dtsi', 'dtso', 'dift', 'patch', 'rej', 'dockerfile', 'containerfile', 'fs', 'fsi', 'fsx', 'fsscript', 'go', 'gv', 'groovy', 'gvy', 'gradle', 'jenkinsfile', 'nf', 'handlebars', 'hbs', 'hjs', 'hlsl', 'hlsli', 'fx', 'bth', 'vsh', 'psh', 'cginc', 'compute', 'html', 'htm', 'shtml', 'jthtml', 'jtht', 'mdoc', 'jsp', 'asp', 'aspx', 'jshtm', 'gitignore_global', 'gitignore', 'npmignore', 'ini', 'java', 'jav', 'js', 'es6', 'mjs', 'cjs', 'pac', 'jsx', 'json', 'bowerrc', 'jscsrc', 'webmanifest', 'js.map', 'css.map', 'ts.map', 'har', 'jslintrc', 'jsonld', 'jsonc', 'eslintrc', 'eslintrc.json', 'jsfmtrc', 'jshintrc', 'swcrc', 'hintrc', 'babelrc', 'code-workspace', 'language-configuration.json', 'less', 'log', 'log.?', 'lua', 'mk', 'md', 'mkd', 'mdwn', 'mdown', 'markdown', 'markdn', 'mdtxt', 'mdtext', 'workbook', 'm', 'mm', 'pl', 'pm', 'pod', 't', 'PL', 'psgi', 'p6', 'pl6', 'pm6', 'nqp', 'php', 'php4', 'php5', 'phtml', 'ctp', 'ps1', 'psm1', 'psd1 ', 'pssc', 'psrc', 'properties', 'cfg', 'conf', 'directory', 'gitattributes', 'gitconfig', 'gitmodules', 'editorconfig', 'npmrc', 'pug', 'jade', 'py', 'rpy', 'pyw', 'cpy', 'gyp', 'gypi', 'pyi', 'ipy', 'r', 'rhistory', 'rprofile', 'rt', 'cshtml', 'rb', 'rbx', 'rjs', 'gemspec', 'rake', 'ru', 'erb', 'podspec', 'rbi', 'rs', 'scss', 'code-search', 'shader', 'sh', 'bash', 'bashrc', 'bash_aliases', 'bash_profile', 'bash_login', 'ebuild', 'install', 'profile', 'bash_logout', 'sql', 'dsql', 'swift', 'ts', 'tsx', 'bas', 'cls', 'frm', 'sht', 'wbk', 'vbs', 'vba', 'bas', 'vbe', 'wsf', 'wsc', 'acm', 'acr', 'acf', 'vb', 'brs', 'vbs', 'bas', 'xml', 'xsd', 'ascx', 'atom', 'axml', 'bpmn', 'cpt', 'csl', 'csproj', 'csproj.user', 'xsl', 'xslt', 'yml', 'eyaml', 'eyml', 'yaml', 'txt', 'err', 'omf'];
 $exts['video'] = ['mp4', 'webm', 'mkv', 'mov', 'flv', 'blv', 'avi', 'wmv', 'm3u8', 'm3u', 'rm', 'rmvb'];
 $exts['zip'] = ['zip', 'rar', '7z', 'gz', 'tar'];
 $exts['apple'] = ['ipa', 'dmg', 'app', 'pkg'];
-$exts['odo'] = ['wps', 'key', 'numbers', 'key', 'pdf'];
+$exts['odo'] = ['wps', 'key', 'numbers', 'key', 'pdf', 'csv', 'dif', 'docm', 'dotx', 'odt', 'one', 'onepkg', 'onetoc2', 'pot', 'potm', 'potx', 'pps', 'ppsm', 'ppsx', 'pptm', 'prn', 'rtf', 'slk', 'thmx', 'xlam', 'xlsb', 'xlsm', 'xlt', 'xltx', 'xltm', 'one'];
 
 $constStr = [
     'languages' => [
         'en-us' => 'English',
-        'zh-cn' => '简体中文',
         'zh-tw' => '繁體中文',
+        'zh-cn' => '简体中文',
         'ja' => '日本語',
         'ko-kr' => '한국어',
         'fa' => 'فارسی',
@@ -98,6 +98,7 @@ $constStr = [
             'referrer' => 'only these domains can refer resourse in this site, format is a1.com|b2.com',
             'domain_path' => 'more custom domain, format is a1.com:/dirto/path1|b2.com:/path2',
             'diskname' => 'The disk name you want show.',
+            'diskDescription' => ' Some tips of this disk, not used in code.',
             'disktag' => 'A tag used in store config and url.',
             'disableShowThumb' => 'if 1, the ShowThumbnail button will not display',
             'disableChangeTheme' => 'if 1, the Theme selection button will not display',
@@ -105,15 +106,15 @@ $constStr = [
             'dontBasicAuth' => 'if 1, will not popup user/pass windows in encrypted folder, but show the page in theme.',
             'background' => 'Set an url as background photo.',
             'backgroundm' => 'Set an url as background in mobile phone.',
-            'theme' => 'Select theme.',
+            'forceHttps' => 'if 1, force to redirect to https when visit via http.',
+            'theme' => 'Select theme for guest.',
             'timezone' => 'Set default timezone.',
             'guestup_path' => 'Set guest upload dir, before set this, the files in this dir will show as normal.',
             'hideFunctionalityFile' => '0 or 1. if 1, some file will not show in list to guest, like readme.md',
             'passfile' => 'The password of folder(& its childrens) will save in this file.',
             'domainforproxy' => 'Will replace the https://xxxxx-my.sharepoint.com with this value.Add &Origindomain=xxxxx-my.sharepoint.com at last',
-            'public_path' => 'Show this Onedrive dir when through the long url of API Gateway; public show files less than private.',
+            'public_path' => 'Show this Onedrive dir when through the long url of API Gateway.',
             'sitename' => 'sitename',
-            'Onedrive_ver' => 'Onedrive version',
         ],
         'zh-cn' => [
             'admin' => '管理密码，不添加时不显示登录页面且无法登录。',
@@ -123,8 +124,9 @@ $constStr = [
             'customCss' => '<style>，在<head>最后面',
             'customTheme' => 'html格式的主题的url',
             'referrer' => '只有这些域名能引用本站资源。格式为a1.com|b1.com',
-            'domain_path' => '使用多个自定义域名时，指定每个域名看到的目录。格式为a1.com:/dirto/path1|b1.com:/path2，比private_path优先。',
+            'domain_path' => '使用多个自定义域名时，指定每个域名看到的目录。格式为a1.com:/dirto/path1|b1.com:/path2。',
             'diskname' => '这个盘你想显示什么名称。',
+            'diskDescription' => '对这个盘的一些描述，随便写，代码不引用这个。',
             'disktag' => '一个标签，用于保存配置，多盘时会显示在url中。',
             'disableShowThumb' => '如果填 1, ‘显示缩略’按钮将被隐藏。',
             'disableChangeTheme' => '如果为 1，则不会显示主题选择按钮',
@@ -132,15 +134,15 @@ $constStr = [
             'dontBasicAuth' => '如果为 1，加密目录不再弹出用户名密码窗口，只会显示主题自带的页面。',
             'background' => '设置一个url作为背景。',
             'backgroundm' => '设置一个url作为手机端用的背景。',
-            'theme' => '选择一个主题。',
+            'forceHttps' => '0或1。如果设置为1，会强制跳https',
+            'theme' => '为游客选择一个主题。',
             'timezone' => '设置默认时区。',
             'guestup_path' => '设置游客上传路径（图床路径），不设置这个值时该目录内容会正常列文件出来，设置后只有上传界面，不显示其中文件（登录后显示）。',
             'hideFunctionalityFile' => '0 或 1。如果 1, 某些文件不列表给游客看，但它的功能正常，比如readme.md',
             'passfile' => '自定义密码文件的名字，可以是\'pppppp\'，也可以是\'aaaa.txt\'等等；列目录时不会显示，只有知道密码才能查看或下载此文件。密码是这个文件的内容，可以空格、可以中文；',
             'domainforproxy' => '会将https://xxxxx-my.sharepoint.com替换成这个值，在目标需要自己设置反代。会加上&Origindomain=原域名',
-            'public_path' => '使用API长链接访问时，显示网盘文件的路径，不设置时默认为根目录；不能是private_path的上级（public看到的不能比private多，要么看到的就不一样）。',
+            'public_path' => '使用API长链接访问时，显示网盘文件的路径，不设置时默认为根目录。',
             'sitename' => '网站的名称',
-            'Onedrive_ver' => 'Onedrive版本',
         ],
         'zh-tw' => [
             'admin' => '管理密碼，不設定密碼將不顯示登入頁面且無法登入。',
@@ -150,7 +152,7 @@ $constStr = [
             'customCss' => '<style>，在<head>最後面',
             'customTheme' => 'html格式的主題的url',
             'referrer' => '',
-            'domain_path' => '使用多個自訂域名時，指定每個域名看到的目錄。格式為a1.com:/dirto/path1|b1.com:/path2，比private_path優先。',
+            'domain_path' => '使用多個自訂域名時，指定每個域名看到的目錄。格式為a1.com:/dirto/path1|b1.com:/path2。',
             'diskname' => '這個盤你想顯示什麼名稱。',
             'disktag' => '一個標籤，用於儲存配置，多盤時會顯示在url中。',
             'disableShowThumb' => '如果填 1, ‘顯示縮略’按鈕將被隱藏。',
@@ -158,15 +160,14 @@ $constStr = [
             'downloadencrypt' => '0 或 1。如果 1, 那加密目錄內的文件可以不需要密碼就能下載。',
             'background' => '設定一個url作為背景。',
             'backgroundm' => '設定一個url作為手機用的背景。',
-            'theme' => '選擇一個主題。',
+            'theme' => '为遊客選擇一個主題。',
             'timezone' => '設定預設時區。',
             'guestup_path' => '設定遊客上傳路徑（圖床路徑），不設定這個值時該目錄內容會正常列文件出來，設定後只有上傳介面，不顯示其中文件（登入後顯示）。',
             'hideFunctionalityFile' => '0 或 1。如果 1, 某些文件不列表給遊客看，但它的功能正常，比如readme.md',
             'passfile' => '自訂密碼文件的名字，可以是\'pppppp\'，也可以是\'aaaa.txt\'等等；列目錄時不會顯示，只有知道密碼才能查看或下載此文件。密碼是這個文件的內容，可以空格、可以中文；',
             'domainforproxy' => '會將https://xxxxx-my.sharepoint.com取代成這個值，在目標需要自己設定反代。會加上&Origindomain=原域名',
-            'public_path' => '使用API長連結訪問時，顯示網路硬碟檔案的路徑，不設定時預設為根目錄；不能是private_path的上級（public看到的不能比private多，要麼看到的就不一樣）。',
+            'public_path' => '使用API長連結訪問時，顯示網路硬碟檔案的路徑，不設定時預設為根目錄。',
             'sitename' => '網站的名稱',
-            'Onedrive_ver' => 'Onedrive版本',
         ],
         'ja' => [
             'admin' => 'パスワードを管理する、追加しない場合、ログインページは表示されず、ログインできません。',
@@ -176,7 +177,7 @@ $constStr = [
             'customCss' => '＜style＞は、＜head＞の一番後ろにあります。',
             'customTheme' => 'htmlフォーマットのテーマのurl',
             'referrer' => '',
-            'domain_path' => '複数のドメイン名を使用する場合、ドメイン名ごとに見られるディレクトリを指定します。フォーマットはa 1.com:/dirto/path 1.com:/path 2で、prvate_path優先。',
+            'domain_path' => '複数のドメイン名を使用する場合、ドメイン名ごとに見られるディレクトリを指定します。フォーマットはa1.com:/dirto/path1|b1.com:/path2。',
             'diskname' => 'このディスクの名前を表示したいですか？',
             'disktag' => '一つのラベルは保存配置に使い、複数のディスクはurlに表示されます。',
             'disableShowThumb' => '1を記入すると、「表示サムネイル」ボタンが隠れます。',
@@ -190,9 +191,8 @@ $constStr = [
             'hideFunctionalityFile' => '0または1です。もし1ならば、いくつかの書類はリストで観光客に見せませんが、その機能は正常です。readme.md',
             'passfile' => 'カスタムパスワードファイルの名前は、\'pppppp \'、\'aaaa.txt \'などの場合があります。ディレクトリをリストするときには表示されません。パスワードを知っている場合にのみ、このファイルを表示またはダウンロードできます。 パスワードはこのファイルの内容であり、スペースまたは漢字を使用できます。',
             'domainforproxy' => '会将https://xxxy-my.sharepoint.comこの値に代えて、目標には自分で反世代を設定する必要があります。に加えて&amp;Originndomain=元のドメイン名',
-            'public_path' => 'APIのロングリンクアクセスを使用する場合、ネットワークディスクファイルのパスが表示されますが、設定されていない場合はデフォルトでルートディレクトリになり、private_pathの上位にはなりません（publicはprivate以上のものを見ることができません。それ以外は異なります。）。',
+            'public_path' => 'APIのロングリンクアクセスを使用する場合、ネットワークディスクファイルのパスが表示されますが、設定されていない場合はデフォルトでルートディレクトリになり。',
             'sitename' => 'ウェブサイト名',
-            'Onedrive_ver' => 'Onedriveバージョン',
         ],
         'ko-kr' => [
             'admin' => '비밀번호를 관리하고 로그인 페이지를 표시하지 않으며 추가하지 않으면 로그인 할 수 없습니다.',
@@ -202,7 +202,7 @@ $constStr = [
             'customCss' => '< 스타일 >, < 헤드 > 맨 뒤에',
             'customTheme' => 'html 형식의 테마 url',
             'referrer' => '',
-            'domain_path' => '도 메 인 이름 을 여러 개 사용자 정의 할 때 도 메 인 이름 마다 보 이 는 디 렉 터 리 를 지정 합 니 다.형식 은 a1. com: / dirto / path 1 | b1. com: / path 2, privatepath 우선.',
+            'domain_path' => '도 메 인 이름 을 여러 개 사용자 정의 할 때 도 메 인 이름 마다 보 이 는 디 렉 터 리 를 지정 합 니 다.형식 은 a1.com:/dirto/path1|b1.com:/path2.',
             'diskname' => '이 접시 에 당신 은 어떤 명칭 을 표시 하고 싶 습 니까?',
             'disktag' => '디스크가 여러 개인 경우 구성을 저장하는 데 사용되는 레이블이 url에 표시됩니다.',
             'disableShowThumb' => '1을 입력하면 “썸네일 표시”버튼이 숨겨집니다.',
@@ -218,7 +218,6 @@ $constStr = [
             'domainforproxy' => 'https://xxxxx-my.sharepoint.com을이 값으로 바꾸고 대상에서 안티 생성을 설정해야합니다. & Origindomain = Original domain name 을 추가합니다.',
             'public_path' => 'API 긴 링크 액세스를 사용하는 경우 네트워크 디스크 파일의 경로가 표시됩니다. 설정되지 않은 경우 기본적으로 루트 디렉토리로 설정됩니다.',
             'sitename' => '웹 사이트 이름',
-            'Onedrive_ver' => 'Onedrive 버전',
         ],
         'fa' => [
             'admin' => 'رمز عبور ادمین، در صورت خالی بودن دکمه لاگین به نمایش در نمی‌آید',
@@ -233,7 +232,6 @@ $constStr = [
             'passfile' => 'رمز عبور dir در این فایل ذخیره می شود.',
             'public_path' => 'این مسیر Onedrive را هنگامی که از طریق آدرس طولانی API Gateway استفاده می کنید ، نشان دهید. فایل های نمایش عمومی کمتر از خصوصی.',
             'sitename' => 'نام سایت',
-            'Onedrive_ver' => 'ورژن Onedrive',
         ],
         'ar-sa' => [
             'admin' => ' إدارة كلمة السر ، لا يمكنك عرض صفحة تسجيل الدخول دون إضافة',
@@ -259,7 +257,6 @@ $constStr = [
             'domainforproxy' => 'سوف   لا شيء   استبدال هذه القيمة ، تحتاج إلى تعيين جيل معاكس في الهدف الخاص بك   إضافة اسم النطاق الأصلي',
             'public_path' => 'عند استخدام API وصلة طويلة للوصول إلى عرض مسار الملف على القرص ، إذا لم يتم تعيين الافتراضي هو الجذر ، لا يمكن أن يكون private ش   لا يمكن أن نرى أكثر من private publics ، أو لا',
             'sitename' => 'اسم الموقع',
-            'Onedrive_ver' => 'أوندريف',
         ],
     ],
     'SetSecretsFirst' => [
@@ -327,11 +324,11 @@ $constStr = [
     ],
     'SetpassfileBfEncrypt' => [
         'en-us' => 'Set \'passfile\' in Environments before encrypt',
-        'zh-cn' => '先在环境变量设置passfile才能加密',
-        'zh-tw' => '先在環境變數設定passfile才能加密',
-        'ja' => '最初に暗号化する環境変数にパスファイルを設定します',
+        'zh-cn' => '先设置passfile才能加密',
+        'zh-tw' => '先設定passfile才能加密',
+        'ja' => '最初に暗号化する変数にパスファイルを設定します',
         'ko-kr' => '암호화하기 전에 환경 변수에 패스 파일을 설정하십시오',
-        'fa' => 'قبل از رمزگذاری \"pass file \" را در محیط تنظیم کنید',
+        'fa' => 'قبل از رمزگذاری \"passfile \" را در محیط تنظیم کنید',
         'ar-sa' => 'أولا تعيين متغير البيئة passfile لتشفير',
     ],
     'updateProgram' => [
@@ -426,9 +423,9 @@ $constStr = [
         'zh-tw' => '修改標籤',
         'ar-sa' => 'تغيير التسمية',
     ],
-    'ChangeOnedrivetype' => [
-        'en-us' => 'Change Onedrive/Sharepoint',
-        'zh-cn' => '切换Onedrive/Sharepoint',
+    'ChangeDrivetype' => [
+        'en-us' => 'Change',
+        'zh-cn' => '切换',
     ],
     'AddDisk' => [
         'en-us' => 'Add Disk',
@@ -467,12 +464,12 @@ $constStr = [
         'ar-sa' => 'الليست',
     ],
     'NeedUpdate' => [
-        'en-us' => 'Program can update<br>Click setup in Operate at top.',
-        'zh-cn' => '可以升级程序<br>在上方管理菜单中<br>进入设置页面升级',
-        'zh-tw' => '可以升級程式<br>在上方管理選單中<br>進入設定頁面升級',
-        'ja' => 'プログラムをアップグレードできます<br>上記の管理メニューで<br>アップグレードする設定ページに入ります',
-        'ko-kr' => '프로그램을 업그레이드 할 수 있습니다. <br> 위의 관리 메뉴에서 <br> 업그레이드 할 설정 페이지를 입력하십시오.',
-        'fa' => 'برنامه می تواند آپدیت شود<br>روی گزینه نصب در بالای صفحه کلیک کنید.',
+        'en-us' => 'Program can update Click setup in Operate at top.',
+        'zh-cn' => '可以升级程序 在上方管理菜单中 进入设置页面升级',
+        'zh-tw' => '可以升級程式 在上方管理選單中 進入設定頁面升級',
+        'ja' => 'プログラムをアップグレードできます 上記の管理メニューで アップグレードする設定ページに入ります',
+        'ko-kr' => '프로그램을 업그레이드 할 수 있습니다.   위의 관리 메뉴에서   업그레이드 할 설정 페이지를 입력하십시오.',
+        'fa' => 'برنامه می تواند آپدیت شود روی گزینه نصب در بالای صفحه کلیک کنید.',
         'ar-sa' => 'يمكن ترقية البرنامج في القائمة أعلاه إدارة',
     ],
     'Operate' => [
@@ -1151,8 +1148,8 @@ $constStr = [
         'zh-tw' => '配置儲存在環境變數',
     ],
     'ONEMANAGER_CONFIG_SAVE_FILE' => [
-        'en-us' => 'Config save in code file, may cause fee',
-        'zh-cn' => '配置保存在代码文件中，可能产生费用',
+        'en-us' => 'Config save in code file, may cause fee, please reinstall later',
+        'zh-cn' => '配置保存在代码文件中，可能产生费用，切换后，请从头再安装一次。',
         'zh-tw' => '配置儲存在程式碼文件中，可能產生費用',
     ],
 ];
