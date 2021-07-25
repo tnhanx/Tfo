@@ -214,7 +214,7 @@
 </path></svg></div>
     <div style="padding:1px" id="top-div">
 <!--LoginStart-->
-        <a class="login" href="?admin"><ion-icon name="ban-outline"></ion-icon></a><!--onclick="login();"-->
+        <a class="login" href="<!--IsPreview?-->admin"><ion-icon name="ban-outline"></ion-icon></a><!--onclick="login();"-->
 <!--LoginEnd-->
 <!--AdminStart-->
         <li class="operate" id="opflow"><ion-icon name="ban-outline"></ion-icon><ul>
@@ -505,7 +505,7 @@
         <div class="list-body-container">
             <div style="overflow:hidden">
                 <div id="vcomments"></div><span id="/index/" class="leancloud_visitors"><i class="leancloud-visitors-count"></i><em class="post-meta-item-text"> Rd</em></span>
-		            <script>new Waline({el:'#vcomments',serverURL: 'https://bkc.vercel.app/',visitor:true,lang:'en',meta:['nick','mail'],path: location.pathname,requiredFields:['nick','mail'],placeholder:'Write your comment here, please:)'})</script>
+		            <script>new Waline({el:'#vcomments',serverURL: 'https://bkc.vercel.app/',visitor:true,lang:'en',meta:['nick','mail'],path: location.pathname,requiredFields:['nick','mail'],emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw'],placeholder:'Write your comment here, please:)'})</script>
             </div>
         </div>
     </div>
