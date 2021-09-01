@@ -89,7 +89,7 @@
 Theme features:
 1. Poetry displayed with more-disk. 2. Move the setting/login/text-editing/download button to bottom left.
 
-> 主题特性：1. 今日诗词随多盘显示. 2. 将设置/登录/文本编辑/下载按钮移到底部动态图标处悬浮.
+> 主题特性：1. 今日诗词随多盘显示. 2. 将设置/登录/文本编辑/下载按钮移到左下角动态图标处悬浮.
 
 Specifically, you can download or fork the repository, experience it on [Li Share Storage Mini](https://tfo.herokuapp.com/ "Li Share Storage Mini") with the example tfo.html. The theme is based on classic.html with modification, all original features are supported. At present, there are still many problems with the theme, please understand. PS: the theme will realize many functions, you could keep looking forward to next updates. However, the private content related to other platforms, such as comments system, webmaster tools, access statistics, which are not included in the theme. If you need, please find and add them in the setup page. The PHP historical version of the theme can be found in the <a href="./theme/" title="Old Theme">Theme</a> folder.
 
@@ -128,7 +128,7 @@ Notice:
 > 2, Vercel limit 100 deploy every day.  
 
 How to Install: https://scfonedrive.github.io/Vercel/Deploy.html .
-After Installation, switch the update branch (BingoKingo：Tfo) and click OK in setup page.
+After Installation, switch the update branch to BingoKingo/Tfo:master and click OK in setup page.
 
 
 ### Deploy to Tencent Serverless Cloud Function (SCF 腾讯无服务器云函数)  
