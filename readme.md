@@ -1,5 +1,5 @@
 # **Tfo**
-###### A website for two-point filestorage online (tfo)(20210701). 
+###### A website for two-point filestorage online (tfo)(20210826). 
 
 <img src="https://tfo.herokuapp.com/index/Upload%20上传/WebContents/Github/Tfo/Tfo.logo.svg" alt="Tfo's Logo" width="250" height="250"/>
 
@@ -109,8 +109,8 @@ Official: https://heroku.com
 Demo: https://herooneindex.herokuapp.com/  
 
 How to Install:   
-> ~~Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/BingoKingo/Tfo) to Deploy a new app~~(`"We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy."`)  
-> Create an app, then turn to Deploy tab, deploy via connect to your github fork.   
+> ~~Click the button [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) to Deploy a new app~~(`"We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy."`)  
+> Fork this project, create a heroku app, then turn to Deploy tab, deploy via connect to your github fork.   
 
 
 ### Deploy to Glitch  
@@ -118,6 +118,17 @@ Official: https://glitch.com/
 Demo: https://onemanager.glitch.me/  
 
 How to Install: New Project -> Import form Github -> paste "https://github.com/BingoKingo/Tfo", after done, Show -> In a New Window.  
+
+
+### Deploy to Vercel  
+Official: https://vercel.com/  
+Demo: null  
+Notice: 
+> 1, you must wait 30-50s to make sure deploy READY after change config;  
+> 2, Vercel limit 100 deploy every day.  
+
+How to Install: https://scfonedrive.github.io/Vercel/Deploy.html .
+After Installation, switch the update branch (BingoKingo：Tfo) and click OK in setup page.
 
 
 ### Deploy to Tencent Serverless Cloud Function (SCF 腾讯无服务器云函数)  
